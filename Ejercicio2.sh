@@ -44,5 +44,18 @@ do
  shift
 done
 
-echo $directorio
-echo $archCadenas
+IFS=$'\n'
+
+#cargo todas las cadenas del archivo en el array
+declare -a arrayCadenas=(`awk -f crearArray.awk $archCadenas`)
+
+i=0
+
+for linea in ${arrayCadenas[@]}
+do
+    if grep -q $linea "archivo de prueba.txt"; then
+        (( i += 1 ))
+    fi
+done
+
+echo $i

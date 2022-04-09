@@ -1,0 +1,7 @@
+este es un archivo de prueba
+para verificar si el script puede
+encontrar las cadenas del archivo origen en este
+por ejemplo esta cadena: pass es contraseña no esta
+pero si deberia hallar esta: con numeros 45
+otra que esta es: cadena de prueba
+osea que solo deberia encontrar dos cadenas

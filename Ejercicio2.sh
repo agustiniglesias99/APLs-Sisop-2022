@@ -44,18 +44,31 @@ do
  shift
 done
 
-IFS=$'\n'
+if [ ! -d "$directorio" ]; then
+    echo "¡ERROR! $directorio no existe o no es un directorio. Para obtener informacion sobre uso del script: -h -help o -?"
+    exit
+elif [ ! -r "$directorio" ]; then
+    echo "No tiene permisos de lectura para $directorio"
+else
+    IFS=$'\n'
 
-#cargo todas las cadenas del archivo en el array
-declare -a arrayCadenas=(`awk -f crearArray.awk $archCadenas`)
+    archivos_a_analizar=(`find "$directorio" -type f`) 
 
-i=0
+    #cargo todas las cadenas del archivo en el array
+    declare -a arrayCadenas=(`awk -f crearArray.awk $archCadenas`)
 
-for linea in ${arrayCadenas[@]}
-do
-    if grep -q $linea "archivo de prueba.txt"; then
-        (( i += 1 ))
-    fi
-done
-
-echo $i
+    for arch in ${archivos_a_analizar[@]}
+    do
+        if [ ! -r "$arch" ]; then
+            echo "no tiene permisos de lectura para $arch"
+        else
+            for linea in ${arrayCadenas[@]}
+            do
+                if grep -q $linea $arch; then
+                    exit 1  #eccontro una cadena dentro de los archivos
+                fi
+            done
+        fi
+    done
+    exit 0 #no encontro ninguna cadena dentro de los archivos
+fi

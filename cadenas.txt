@@ -1,5 +1,5 @@
-userpassword es la contraseña del usuario
-pass es contraseña
-user es usuario que esta ingresando al sistema
-cadena de prueba
-con numeros 45
+getcharr
+ctype.v
+Coding is fun
+.Parse
+console.ReadLine

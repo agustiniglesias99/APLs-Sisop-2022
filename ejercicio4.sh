@@ -1,5 +1,21 @@
 #!/bin/bash
 
+####################   ENCABEZADO    ##########################
+#							      							  #
+#	Nombre del script: Ejercicio2.sh		     			  #
+#	Número de APL : 1				     					  #
+#	Número de Ejercicio: 2                                    #
+#   Primer Entrega      				 				      #
+#							    							  #
+#  INTEGRANTES:						  					      #
+#	Morandi Mayra          41454827 				          #
+#	Iglesias Agustin Ariel 41894233							  #
+#	Zarzycki Hernan        39244031         				  #
+#	Monteros Matias Javier 40886497							  #
+#	Casaux Nicolas         39347293 						  #
+#							      							  #
+##############################################################
+
 # ./ejercicio4.sh -e extensiones.txt -c / -s -p num -o salida.txt
 
 function ayuda() {
@@ -17,7 +33,7 @@ function ayuda() {
 comentario=false            #Tengo que setearlas en falso porque si no cuando verifico si enviaron ambos parametros no funciona
 sincomentario=false
 
-options=$(getopt -o hd:e:csp:o: --l help,,dir:,ext:,coment,sincom,porc:,salida: -- "$@" 2> /dev/null)
+options=$(getopt -o hd:e:csp:o: --l help,dir:,ext:,coment,sincom,porc:,salida: -- "$@" 2> /dev/null)
 # VALID_ARGUMENTS=$?
 #if [ "$VALID_ARGUMENTS" != "0" ]
 if [ "$?" != "0" ]      #$? codigo de salida del ultimo comando
@@ -129,7 +145,7 @@ done
 # Validación de parámetros coment y sincom, no se pueden recibir los dos al mismo tiempo
 if [ $comentario == "true" ] && [ $sincomentario == "true" ]
 then
-    echo "No se pueden recibir los comandos de -coment y -sincom al mismo tiempo."
+    echo "No se pueden recibir los comandos de --coment y --sincom al mismo tiempo."
     ayuda
     exit 1
 fi
@@ -138,6 +154,14 @@ fi
 IFS=';'
 str=$(cat $extensiones)
 read -a arrExt <<< "$str"
+
+archivos=(`find "$directorio" -type f`)
+echo "${#archivos[@]}"
+# for ext in ${arrExt[@]}
+# do
+#     $(find "$directorio" -not -name "*.js" -type f)
+
+#     for type in ${arrExt[@]};do archivos+=$(find "$directorio" ! -name "*.${type}"); done 
 
 #dps con un find filtrar los archivos que tengan esas extensiones
 
@@ -149,12 +173,31 @@ read -a arrExt <<< "$str"
 #find -name "*${type}"          MIRAR EL *
 
 
-for fichero in $(ls directorio)
-do
-    #verificar si la extencion está en el archivo pasado por paramentro en -ext
-    extenAux=$(cut -d "." -f2 << $fichero)
-    echo extenAux
+# for fichero in $(ls directorio)
+# do
+#     #verificar si la extencion está en el archivo pasado por paramentro en -ext
+#     extenAux=$(cut -d "." -f2 << $fichero)
+#     echo extenAux
 
-    #contar la cantidad de lineas del archivo
-    #cantLinDif=$(diff --suppress-common-lines --speed-large-files -y File1 File2 | wc -l)
+#     #contar la cantidad de lineas del archivo
+#     #cantLinDif=$(diff --suppress-common-lines --speed-large-files -y File1 File2 | wc -l)
+# done
+contador=0
+for arch in ${archivos[@]}
+do
+    echo "$arch"
+    echo "archivo"
+    # extenAux=$(cut -d '.' -f2 <<< $arch)
+    # for ext in ${arrExt[@]}
+    # do
+    #     if [ "$ext" = "$extenAux" ]; then
+    #         ((contador=contador+1))
+    #     fi
+    #     echo "$contador"
+    #     contador=0
+    # done
+    # if [ $inarray ]; then
+    #     echo "$arch"
+    # fi
+    #echo "$extenAux"
 done

@@ -26,9 +26,9 @@ function ayuda() {
 }
 
 if [ $# -eq 0 ]; then
-    echo "No se ingresaron parámetros. Para obtener informacion sobre uso del script: -h -help o -?"
+    echo "No se ingresaron parámetros. Para obtener informacion sobre uso del script: -h --help o -?"
     exit
-elif [ "$1" = "-help" ] || [ "$1" = "-h" ] || [ "$1" = "-?" ]; then
+elif [ "$1" = "--help" ] || [ "$1" = "-h" ] || [ "$1" = "-?" ]; then
         ayuda
         exit
 fi
@@ -65,7 +65,7 @@ else
             for linea in ${arrayCadenas[@]}
             do
                 if grep -q $linea $arch; then
-                    exit 1  #eccontro una cadena dentro de los archivos
+                    exit 1  #encontro una cadena dentro de los archivos
                 fi
             done
         fi

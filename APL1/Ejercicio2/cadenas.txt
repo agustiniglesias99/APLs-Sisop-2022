@@ -1,5 +1,0 @@
-getcharr
-ctype.v
-Coding is fun
-.Parse
-console.ReadLine

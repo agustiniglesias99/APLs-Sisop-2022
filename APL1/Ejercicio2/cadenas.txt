@@ -1,0 +1,3 @@
+islower
+int main ()
+Int32.Parse

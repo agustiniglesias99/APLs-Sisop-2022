@@ -55,7 +55,6 @@ else
     archivos_a_analizar=(`find "$directorio" -type f`)
 
     if [ ${#archivos_a_analizar[@]} -eq 0 ]; then
-        echo "Directorio vacío"
         exit 0
     fi
 
@@ -63,7 +62,6 @@ else
     declare -a arrayCadenas=(`awk -f crearArray.awk $archCadenas`)
 
     if [ ${#arrayCadenas[@]} -eq 0 ]; then
-        echo "Archivo de cadenas vacío"
         exit 0
     fi
 

@@ -1,4 +1,4 @@
 Producto|CantidadVendida|TotalRecaudado
 Caramelos|100|500
-Chicles|100|123.50
-Chocolates|200|1500
+Chicles|250|123.50
+Chocolates|500|1500

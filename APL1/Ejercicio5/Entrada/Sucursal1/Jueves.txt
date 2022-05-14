@@ -1,0 +1,4 @@
+Producto|CantidadVendida|TotalRecaudado
+Caramelos|300|500
+Chicles|0|123.50
+Chocolates|40|1500

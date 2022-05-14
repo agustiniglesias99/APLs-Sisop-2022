@@ -3,7 +3,9 @@ BEGIN{
 }
 {
     split($0,cant,"|")
-    current=cant[1]
+    print $cant[0]
+    print $cant[2]
+    current=$cant[1]
     if($current -gt $max){
         max=$current
     }

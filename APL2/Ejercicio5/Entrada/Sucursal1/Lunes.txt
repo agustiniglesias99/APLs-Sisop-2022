@@ -1,4 +1,9 @@
 Producto|CantidadVendida|TotalRecaudado
 Caramelos|100|500
+<<<<<<< HEAD
 Chicles|300|123.50
 Chocolates|200|1500
+=======
+Chicles|250|123.50
+Chocolates|500|1500
+>>>>>>> 3b6d5c1a65d230a413be63b7f6a280e3b8c2f833

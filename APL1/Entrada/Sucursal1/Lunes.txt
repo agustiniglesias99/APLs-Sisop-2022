@@ -1,5 +1,4 @@
 Producto|CantidadVendida|TotalRecaudado
 Caramelos|100|500
-Melones|250|123.50
+Chicles|300|123.50
 Chocolates|200|1500
-Vodka|87|900

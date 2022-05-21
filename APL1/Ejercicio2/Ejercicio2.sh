@@ -72,7 +72,7 @@ else
         else
             for linea in ${arrayCadenas[@]}
             do
-                if grep -q $linea $arch; then
+                if grep -Fq $linea $arch; then
                     exit 1  #encontro una cadena dentro de los archivos
                 fi
             done

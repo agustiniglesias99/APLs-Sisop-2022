@@ -4,6 +4,7 @@
 int main()
 {
     printf("\n\n\t\tStudytonight - Best place to learn\n\n\n");
+    string[n] args;saSAS
 
     char alphabet;
     printf("Enter an alphabet : ");

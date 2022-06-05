@@ -1,1 +1,4 @@
+islower
+int main ()
+Int32.Parse
 string[n] args
